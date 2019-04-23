@@ -1,0 +1,25 @@
+.mb-4, .my-4 {
+    margin-bottom: 1rem !important;
+}
+.bg-dark {
+    background-color: #343a40 !important;
+}
+.navbar-expand-md {
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+.navbar {
+    position: relative;
+    height: 70px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
