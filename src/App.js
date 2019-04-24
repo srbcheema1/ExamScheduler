@@ -3,9 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Home from './pages/Home.js'
 import About from './pages/About.js'
-import Navbar from './components/Navbar.js'
-
-import './App.css';
+import Navbar from './components/navbar/Navbar.js'
 
 class App extends Component {
   render() {

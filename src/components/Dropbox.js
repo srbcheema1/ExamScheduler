@@ -12,7 +12,7 @@ const baseStyle = {
   borderColor: '#eeeeee',
   borderStyle: 'dashed',
   backgroundColor: '#fafafa',
-  // backgroundImage: 'url(${backg_image.jpg})',
+   //backgroundImage: 'url(${backg_image.jpg})',
   color: '#bdbdbd',
   outline: 'none',
   transition: 'border .24s ease-in-out'

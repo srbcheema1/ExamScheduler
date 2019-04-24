@@ -1,5 +1,4 @@
 import React from 'react';
-import Load from './loader.gif'
 import './Loader.css'
 const Loader = (props) =>{
   return(
