@@ -1,62 +1,59 @@
-import React, {useMemo} from 'react';
-import {useDropzone} from 'react-dropzone';
+import React, { Component } from 'react'
+import Dropzone from 'react-dropzone'
+import Loader from './loader/Loader.js'
 
-const baseStyle = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '20px',
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#eeeeee',
-  borderStyle: 'dashed',
-  backgroundColor: '#fafafa',
-   //backgroundImage: 'url(${backg_image.jpg})',
-  color: '#bdbdbd',
-  outline: 'none',
-  transition: 'border .24s ease-in-out'
-};
+class Dropbox extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      file:null,
+      task:'empty'
+    };
+  }
 
-const activeStyle = {
-  borderColor: '#2196f3'
-};
+  onDropFile=(acceptedFiles)=>{
+    this.setState({file:acceptedFiles[0],task:'verfying'})
+    var data = new FormData();
+    data.append('file', acceptedFiles[0]);
+    data.append('user', 'srb');
+    fetch('http://localhost:5000/rest', { // Your POST endpoint
+      method: 'POST',
+      body: data // This is your fil[e object
+    }).then(
+      response => response.json() // if the response is a JSON object
+    ).then(
+      success => {
+        console.log(success) // Handle the success response object
+        if(success['done']) {
+          this.setState({file:acceptedFiles[0],task:'good'})
+        } else {
+          this.setState({file:acceptedFiles[0],task:'bad'})
+        }
+      }
+    ).catch(
+      error => console.log(error) // Handle the error response object
+    );
+  }
+  render() {
+    return (
+      <Dropzone onDrop={this.onDropFile}>{
+        ({ getRootProps, getInputProps }) => (
+          <section>
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              <p>Drag 'n' drop some files here</p>
+              {this.state.file?this.state.file.name:null}
+            </div>
+            {this.state.ktask=='verfying'?<Loader />:null}
+            {this.state.task=='good'?<p>good</p>:null}
+            {this.state.task=='bad'?<p>bad</p>:null}
+            {this.state.task=='empty'?<p>empty</p>:null}
+          </section>
+        )
+      }
+      </Dropzone>
+    )
+  }
 
-const acceptStyle = {
-  borderColor: '#00e676'
-};
-
-const rejectStyle = {
-  borderColor: '#ff1744'
-};
-
-function Styled(props) {
-  const {
-    getRootProps,
-    getInputProps,
-    isDragActive,
-    isDragAccept,
-    isDragReject
-  } = useDropzone({accept: 'documents/*'});
-
-  const style = useMemo(() => ({
-    ...baseStyle,
-    ...(isDragActive ? activeStyle : {}),
-    ...(isDragAccept ? acceptStyle : {}),
-    ...(isDragReject ? rejectStyle : {})
-  }), [
-    isDragActive,
-    isDragReject
-  ]);
-
-  return (
-    <div className="container">
-      <div {...getRootProps({style})}>
-        <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
-      </div>
-    </div>
-  );
 }
-
-export default Styled;
+export default Dropbox;

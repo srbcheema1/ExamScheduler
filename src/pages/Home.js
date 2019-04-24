@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Dropbox from '../components/Dropbox.js'
-import Loader from '../components/loader/Loader.js'
 
 class Home extends Component{
   render(){
@@ -10,15 +9,12 @@ class Home extends Component{
         <div className = "row">
           <div className="col-md-4">
             <Dropbox/>
-            <Loader/>
           </div>
           <div className="col-md-4">
             <Dropbox/>
-            <Loader/>
           </div>
           <div className="col-md-4">
             <Dropbox/>
-            <Loader/>
           </div>
         </div>
         <div className = "text-center">
@@ -29,4 +25,4 @@ class Home extends Component{
   }
 }
 
-export default Home
+export default Home;
