@@ -1,6 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component, useMemo } from 'react'
 import Dropzone from 'react-dropzone'
 import Loader from './loader/Loader.js'
+
+const baseStyle = {
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  padding: '10px',
+  borderWidth: 2,
+  borderRadius: 2,
+  minHeight:'130px',
+  borderColor: '#eeeeee',
+  borderStyle: 'dashed',
+  backgroundColor: '#fafafa',
+  color: '#bdbdbd',
+  outline: 'none',
+  transition: 'border .24s ease-in-out'
+};
+
+const activeStyle = {
+  borderColor: '#2196f3'
+};
+
+const acceptStyle = {
+  borderColor: '#00e676'
+};
+
+const rejectStyle = {
+  borderColor: '#ff1744'
+};
 
 class Dropbox extends Component {
   constructor(props){
@@ -16,7 +45,12 @@ class Dropbox extends Component {
     var data = new FormData();
     data.append('file', acceptedFiles[0]);
     data.append('user', 'srb');
-    fetch('http://localhost:5000/rest', { // Your POST endpoint
+    var url = "http://localhost:5000/"+{
+      "teachers_list":"rest",
+      "schedule_list":"rest",
+      "room_list":"rest"
+    }[this.props.filename]
+    fetch(url, { // Your POST endpoint
       method: 'POST',
       body: data // This is your fil[e object
     }).then(
@@ -25,9 +59,11 @@ class Dropbox extends Component {
       success => {
         console.log(success) // Handle the success response object
         if(success['done']) {
-          this.setState({file:acceptedFiles[0],task:'good'})
+          this.setState({file:acceptedFiles[0],task:'verified'})
+          this.props.onFileChanged(success['file'])
         } else {
-          this.setState({file:acceptedFiles[0],task:'bad'})
+          this.props.onFileChanged(false)
+          this.setState({file:acceptedFiles[0],task:'wrong'})
         }
       }
     ).catch(
@@ -37,19 +73,26 @@ class Dropbox extends Component {
   render() {
     return (
       <Dropzone onDrop={this.onDropFile}>{
-        ({ getRootProps, getInputProps }) => (
-          <section>
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here</p>
-              {this.state.file?this.state.file.name:null}
-            </div>
-            {this.state.ktask=='verfying'?<Loader />:null}
-            {this.state.task=='good'?<p>good</p>:null}
-            {this.state.task=='bad'?<p>bad</p>:null}
-            {this.state.task=='empty'?<p>empty</p>:null}
-          </section>
-        )
+        ({ getRootProps, getInputProps, isDragAccept,
+          isDragReject, isDragActive }) => {
+          const style = useMemo(() => ({
+            ...baseStyle,
+            ...(isDragActive ? activeStyle : {}),
+            ...(isDragAccept ? acceptStyle : {}),
+            ...(isDragReject ? rejectStyle : {})
+          }), [
+            isDragActive,
+            isDragReject
+          ]);
+          return (
+            <section>
+            <div {...getRootProps({style})}>
+                <input {...getInputProps()} disabled={this.state.task==="verified"}/>
+                <Loader {...{[this.state.task]:true, filename:this.props.filename}} />
+              </div>
+            </section>
+          )
+        }
       }
       </Dropzone>
     )
