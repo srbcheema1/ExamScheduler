@@ -2,6 +2,7 @@ import React from 'react';
 import './Loader.css'
 
 const Loader = (props) =>{
+  //console.log(props)
   if(props.empty) {
     return (
       <div className="Loader container">

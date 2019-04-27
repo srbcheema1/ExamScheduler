@@ -45,11 +45,8 @@ class Dropbox extends Component {
     var data = new FormData();
     data.append('file', acceptedFiles[0]);
     data.append('user', 'srb');
-    var url = "http://localhost:5000/"+{
-      "teachers_list":"rest",
-      "schedule_list":"rest",
-      "room_list":"rest"
-    }[this.props.filename]
+    data.append('list',this.props.filename);
+    var url = "http://localhost:5000/" + "validate"
     fetch(url, { // Your POST endpoint
       method: 'POST',
       body: data // This is your fil[e object
@@ -57,7 +54,7 @@ class Dropbox extends Component {
       response => response.json() // if the response is a JSON object
     ).then(
       success => {
-        console.log(success) // Handle the success response object
+        //console.log(success) // Handle the success response object
         if(success['done']) {
           this.setState({file:acceptedFiles[0],task:'verified'})
           this.props.onFileChanged(success['file'])
