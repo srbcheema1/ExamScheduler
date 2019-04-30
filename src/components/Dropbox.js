@@ -1,6 +1,7 @@
 import React, { Component, useMemo } from 'react'
 import Dropzone from 'react-dropzone'
 import Loader from './loader/Loader.js'
+import './Drop.css'
 
 const baseStyle = {
   flex: 1,
@@ -34,10 +35,16 @@ const rejectStyle = {
 class Dropbox extends Component {
   constructor(props){
     super(props);
-    this.state = {
+    this.initialstate = {
       file:null,
-      task:'empty'
+      task:'empty',
+      message:null,
     };
+    this.state = this.initialstate;
+  }
+
+  Reset=()=>{
+    this.setState({...this.initialstate});
   }
 
   onDropFile=(acceptedFiles)=>{
@@ -56,18 +63,22 @@ class Dropbox extends Component {
       success => {
         //console.log(success) // Handle the success response object
         if(success['done']) {
-          this.setState({file:acceptedFiles[0],task:'verified'})
-          this.props.onFileChanged(success['file'])
+          this.setState({file:acceptedFiles[0],task:'verified',message:null});
+          this.props.onFileChanged(success['file'],{});
         } else {
-          this.props.onFileChanged(false)
-          this.setState({file:acceptedFiles[0],task:'wrong'})
+          var message = success['message'];
+          this.props.onFileChanged(false,{});
+          this.setState({file:acceptedFiles[0],task:'wrong',message:message});
+          message = message.replace(/\n/g, "<br />");
+          document.getElementById(this.props.filename+"_text").innerHTML = message;
         }
       }
     ).catch(
       error => console.log(error) // Handle the error response object
     );
   }
-  render() {
+
+  render(props) {
     return (
       <Dropzone onDrop={this.onDropFile}>{
         ({ getRootProps, getInputProps, isDragAccept,
@@ -82,11 +93,15 @@ class Dropbox extends Component {
             isDragReject
           ]);
           return (
-            <section>
-            <div {...getRootProps({style})}>
-                <input {...getInputProps()} disabled={this.state.task==="verified"}/>
-                <Loader {...{[this.state.task]:true, filename:this.props.filename}} />
+            <section className="myTooltip">
+              <div {...getRootProps({style})}>
+                  <input {...getInputProps()} disabled={this.state.task==="verified"}/>
+                  <Loader {...{[this.state.task]:true, filename:this.props.filename}} />
               </div>
+              {this.state.message&&
+                <span className="myTooltiptext" id={this.props.filename+"_text"}>
+                </span>
+              }
             </section>
           )
         }
