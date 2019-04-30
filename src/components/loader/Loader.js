@@ -21,7 +21,7 @@ const Loader = (props) =>{
   if(props.verified){
     return(
       <div className="Loader container">
-        <img 
+        <img
           src="https://thumbs.gfycat.com/ShyCautiousAfricanpiedkingfisher-max-1mb.gif"
           height="50" alt="veri"
         />
@@ -31,7 +31,7 @@ const Loader = (props) =>{
   if(props.verfying) {
     return(
       <div className="Loader container">
-        <img 
+        <img
           src="http://chittagongit.com/download/49938"
           height="70" alt="veri"
        />

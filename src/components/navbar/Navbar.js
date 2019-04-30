@@ -9,7 +9,7 @@ class Navbar extends Component{
         <div className="container">
           <Link className="navbar-brand mr-4" to="/">
             <span style={{textAlign: 'left'}}>
-              <span style={{color:'red', fontWeight:'700'}}>Exam</span> scheuler
+              <span style={{color:'red', fontWeight:'700'}}>Exam</span> scheduler
             </span>
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">

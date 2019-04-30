@@ -71,8 +71,9 @@ class Home extends Component{
         else {
           var message = success['message'];
           this.setState({message:message,showModel:true});
-          var mess = message.replace(/\n/g, "<br />");
-          document.getElementById("modal_desc").innerHTML = mess;
+          message = message.replace(/\n/g, "<br />");
+          message += "<br/><a href='/About'>Read the instructions</a><br/>";
+          document.getElementById("modal_desc").innerHTML = message;
         }
       }
     ).catch(
@@ -171,7 +172,7 @@ class Home extends Component{
         </div> {/*row ends*/}
         <Modal show={this.state.showModel} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Error Occured!</Modal.Title>
+            <Modal.Title>Error! Incomplete Data</Modal.Title>
           </Modal.Header>
           <Modal.Body id="modal_desc"></Modal.Body>
           <Modal.Footer>

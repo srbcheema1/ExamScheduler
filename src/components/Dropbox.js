@@ -70,6 +70,7 @@ class Dropbox extends Component {
           this.props.onFileChanged(false,{});
           this.setState({file:acceptedFiles[0],task:'wrong',message:message});
           message = message.replace(/\n/g, "<br />");
+          message += "<br/><a href='/About'>Read the instructions</a><br/>";
           document.getElementById(this.props.filename+"_text").innerHTML = message;
         }
       }
@@ -95,7 +96,7 @@ class Dropbox extends Component {
           return (
             <section className="myTooltip">
               <div {...getRootProps({style})}>
-                  <input {...getInputProps()} disabled={this.state.task==="verified"}/>
+                  <input {...getInputProps()} disabled={this.state.task==="_verified"}/>
                   <Loader {...{[this.state.task]:true, filename:this.props.filename}} />
               </div>
               {this.state.message&&
