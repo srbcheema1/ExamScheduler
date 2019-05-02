@@ -1,4 +1,6 @@
 import React from 'react';
+import done_gif from './done.gif'
+import loading_gif from './loading.gif'
 import './Loader.css'
 
 const Loader = (props) =>{
@@ -22,8 +24,8 @@ const Loader = (props) =>{
     return(
       <div className="Loader container">
         <img
-          src="https://thumbs.gfycat.com/ShyCautiousAfricanpiedkingfisher-max-1mb.gif"
-          height="50" alt="veri"
+          src={done_gif}
+          height="50" alt="verified"
         />
       </div>
     )
@@ -32,8 +34,8 @@ const Loader = (props) =>{
     return(
       <div className="Loader container">
         <img
-          src="http://chittagongit.com/download/49938"
-          height="70" alt="veri"
+          src={loading_gif}
+          height="70" alt="verifying"
        />
       </div>
     )
