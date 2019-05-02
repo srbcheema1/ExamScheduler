@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import './navbar.css'
+
 class Navbar extends Component{
   render(){
     return(
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4 fixed-top">
+      <nav className="navbar navbar-expand-md navbar-dark mb-4">
         <div className="container">
           <Link className="navbar-brand mr-4" to="/">
             <span style={{textAlign: 'left'}}>
@@ -22,7 +24,11 @@ class Navbar extends Component{
                 <li className="nav-item active">
                   <Link className="nav-link" to="/About">About</Link>
                 </li>
+                <li className ="nav-item active">
+                  <Link className="nav-link" to="/Help">Help</Link>
+                </li>
             </ul>
+
           </div>
         </div>
       </nav>
