@@ -1,0 +1,15 @@
+{
+  "main.css": "/exam_scheduler/static/css/main.d9c6ee2d.chunk.css",
+  "main.js": "/exam_scheduler/static/js/main.12e05e8d.chunk.js",
+  "main.js.map": "/exam_scheduler/static/js/main.12e05e8d.chunk.js.map",
+  "runtime~main.js": "/exam_scheduler/static/js/runtime~main.1613864b.js",
+  "runtime~main.js.map": "/exam_scheduler/static/js/runtime~main.1613864b.js.map",
+  "static/js/2.092b047d.chunk.js": "/exam_scheduler/static/js/2.092b047d.chunk.js",
+  "static/js/2.092b047d.chunk.js.map": "/exam_scheduler/static/js/2.092b047d.chunk.js.map",
+  "index.html": "/exam_scheduler/index.html",
+  "precache-manifest.e80401382ded88332f39951f97ce2495.js": "/exam_scheduler/precache-manifest.e80401382ded88332f39951f97ce2495.js",
+  "service-worker.js": "/exam_scheduler/service-worker.js",
+  "static/css/main.d9c6ee2d.chunk.css.map": "/exam_scheduler/static/css/main.d9c6ee2d.chunk.css.map",
+  "static/media/done.gif": "/exam_scheduler/static/media/done.fcecaf11.gif",
+  "static/media/loading.gif": "/exam_scheduler/static/media/loading.d9933c4e.gif"
+}
