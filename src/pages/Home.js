@@ -130,7 +130,7 @@ class Home extends Component{
           <div className="col-md-3 scheduler-box">
             <div className="content-section">
               <ul className="list-group">
-                <li className="list-group-item list-group-item-light active text-center">Templates</li>
+                <li className="list-group-item list-group-item-light srb-pane-title text-center">Templates</li>
                 <li className="list-group-item list-group-item-light">
                   <a href="https://docs.google.com/spreadsheets/d/15bAOhsQVrBLxnEd4DI-PgnyDpE14taAN_ydTV9vniWY/edit?usp=sharing"
                   target="_blank" rel="noreferrer noopener">
