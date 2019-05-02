@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/exam_scheduler/precache-manifest.e80401382ded88332f39951f97ce2495.js"
+  "/exam_scheduler_frontend/precache-manifest.397eadf146c0641277c938d33a99b78b.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/exam_scheduler/index.html", {
+workbox.routing.registerNavigationRoute("/exam_scheduler_frontend/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
