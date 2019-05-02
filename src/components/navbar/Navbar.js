@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import './Navbar.css'
 
 class Navbar extends Component{
   render(){
@@ -15,7 +14,7 @@ class Navbar extends Component{
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className="collapse navbar-collapse" id="navbarToggle">
             <ul className="navbar-nav ml-auto">
                 <li className ="nav-item active">
                   <Link className="nav-link" to="/">Home</Link>
