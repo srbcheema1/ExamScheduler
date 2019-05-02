@@ -3,7 +3,9 @@ import {Modal, Button} from 'react-bootstrap'
 
 import Dropbox from '../components/Dropbox/Dropbox.js'
 import TemplatePannel from '../components/right_pannel/templates.js'
+import { server_url } from '../extra/constants.js';
 import './styles/Home.css'
+
 
 class Home extends Component{
   constructor(props) {
@@ -55,7 +57,7 @@ class Home extends Component{
     data.append('work_ratio', this.state.work_ratio);
     data.append('seed', this.state.seed);
     data.append('user', 'srb');
-    var url = "http://localhost:5000/"+"output"
+    var url = `${server_url}/output`
     fetch(url, { // Your POST endpoint
       method: 'POST',
       body: data // This is your fil[e object
@@ -67,7 +69,7 @@ class Home extends Component{
         if(success['done']){
           this.setState({message:null});
           setTimeout(() => {
-            window.location.href = "http://localhost:5000/" + "download/" + success['file']
+            window.location.href = `${server_url}/download/${success['file']}`
           }, 1);
         }
         else {

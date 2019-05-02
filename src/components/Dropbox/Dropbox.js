@@ -2,6 +2,7 @@ import React, { Component, useMemo } from 'react'
 import Dropzone from 'react-dropzone'
 import Loader from '../loader/Loader.js'
 import './Dropbox.css'
+import {server_url} from '../../extra/constants.js'
 
 const baseStyle = {
   flex: 1,
@@ -53,7 +54,8 @@ class Dropbox extends Component {
     data.append('file', acceptedFiles[0]);
     data.append('user', 'srb');
     data.append('list',this.props.filename);
-    var url = "http://localhost:5000/" + "validate"
+
+    var url = `${server_url}/validate`
     fetch(url, { // Your POST endpoint
       method: 'POST',
       body: data // This is your fil[e object
