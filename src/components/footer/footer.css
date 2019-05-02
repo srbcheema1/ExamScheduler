@@ -1,0 +1,36 @@
+.srb-footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+
+.srb-footer .content {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+
+.srb-footer hr {
+    margin-top: 10px;
+}
+
+
+  
+@media screen and (max-width: 800px) {
+    .srb-footer .content {
+        font-size: 12px;
+        padding-top: 8px;
+        padding-bottom:8px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .srb-footer .content {
+        font-size: 10px;
+        padding-top: 4px;
+        padding-bottom:4px;
+    }
+}

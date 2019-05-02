@@ -5,6 +5,7 @@ import Home from './pages/Home.js'
 import About from './pages/About.js'
 import Help from './pages/Help.js'
 import Navbar from './components/navbar/Navbar.js'
+import Footer from './components/footer/footer.js';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route exact path = "/About" component = {About}/>
           <Route exact path = "/Help" component = {Help}/>
         </div>
+        <Footer/>
       </Router>
     );
   }
