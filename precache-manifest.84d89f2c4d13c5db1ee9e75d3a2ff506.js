@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/ExamScheduler/static/css/main.1505f3a5.chunk.css"
   },
   {
-    "revision": "b6ee2a755105c9a2481d879f27b83dbf",
+    "revision": "e6ddfe7728e7e14d84b1382a7f1064da",
     "url": "/ExamScheduler/index.html"
   }
 ];
