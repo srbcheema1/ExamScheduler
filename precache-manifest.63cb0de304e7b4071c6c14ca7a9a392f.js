@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/exam_scheduler_frontend/static/js/runtime~main.62570453.js"
   },
   {
-    "revision": "ce919dcfc569928490af",
-    "url": "/exam_scheduler_frontend/static/js/main.12e05e8d.chunk.js"
+    "revision": "d52027be039ce1986548",
+    "url": "/exam_scheduler_frontend/static/js/main.b629dc9c.chunk.js"
   },
   {
-    "revision": "ed112e93c5d90aefb6dc",
-    "url": "/exam_scheduler_frontend/static/js/2.092b047d.chunk.js"
+    "revision": "05628fdb58044bafaefa",
+    "url": "/exam_scheduler_frontend/static/js/2.d7b6fa80.chunk.js"
   },
   {
-    "revision": "ce919dcfc569928490af",
+    "revision": "d52027be039ce1986548",
     "url": "/exam_scheduler_frontend/static/css/main.d9c6ee2d.chunk.css"
   },
   {
-    "revision": "effdfd432481ab33cdadcb0649edbaa0",
+    "revision": "bbf54329e5c7f6fe8c7694cc56a9c66d",
     "url": "/exam_scheduler_frontend/index.html"
   }
 ];
