@@ -2,7 +2,7 @@
   "name": "exam_scheduler_frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://srbcheema1.github.io/exam_scheduler",
+  "homepage":"https://srbcheema1.github.io/ExamScheduler",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
