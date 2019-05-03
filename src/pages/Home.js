@@ -76,7 +76,7 @@ class Home extends Component{
           var message = success['message'];
           this.setState({message:message,showModel:true});
           message = message.replace(/\n/g, "<br />");
-          message += "<br/><a href='/Help'>Read the instructions</a><br/>";
+          message += "<br/><a href='#/Help'>Read the instructions</a><br/>";
           document.getElementById("modal_desc").innerHTML = message;
         }
       }
