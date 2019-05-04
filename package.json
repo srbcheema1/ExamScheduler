@@ -2,7 +2,7 @@
   "name": "exam_scheduler_frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://srbcheema1.github.io/ExamScheduler",
+  "homepage": "https://srbcheema1.github.io/ExamScheduler",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
@@ -10,6 +10,7 @@
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.4",
+    "react-markdown": "^4.0.8",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8"
   },

@@ -36,8 +36,6 @@ class Home extends Component{
 
   Reset = () => {
     this.setState({...this.initialstate},()=>{
-      console.log('reset');
-      console.log(this.state);
     });
     this.teacher_list_ref.current.Reset();
     this.schedule_list_ref.current.Reset();
@@ -65,7 +63,6 @@ class Home extends Component{
       response => response.json()
     ).then(
       success => {
-        console.log(success)
         if(success['done']){
           this.setState({message:null});
           setTimeout(() => {

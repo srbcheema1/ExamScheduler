@@ -63,7 +63,6 @@ class Dropbox extends Component {
       response => response.json() // if the response is a JSON object
     ).then(
       success => {
-        //console.log(success) // Handle the success response object
         if(success['done']) {
           this.setState({file:acceptedFiles[0],task:'verified',message:null});
           this.props.onFileChanged(success['file'],{});

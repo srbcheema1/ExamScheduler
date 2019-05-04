@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
+import MarkDown from 'react-markdown';
 
-import TemplatePannel from '../components/right_pannel/templates.js'
 import {server_url} from '../extra/constants.js'
+import helpmd from '../extra/help.js';
+import './styles/help.css';
 
 class Help extends Component{
   constructor(props) {
     super(props);
     this.state = {
       message: null,
-      status:null
+      status:'yellow'
     }
   }
   componentDidMount = () => {
-    console.log('fetching version');
     var url = `${server_url}/get_version`
     fetch(url, { // Your POST endpoint
       method: 'POST',
@@ -20,18 +21,17 @@ class Help extends Component{
       response => response.json() // if the response is a JSON object
     ).then(
       success => {
-        console.log(success);
         if(success['done']) {
           let message = `version : ${success['version']}`;
           this.setState({message:message,status:'green'});
         } else {
-          let message = 'some problem with server';
-          this.setState({message:message,status:'yellow'});
+          let message = 'error : some problem with server';
+          this.setState({message:message,status:'blue'});
         }
       }
     ).catch(
       error => {
-        let message = 'server seems offile';
+        let message = 'error : server seems offile';
         this.setState({message:message,status:'red'});
         console.log(error) // Handle the error response object
       }
@@ -41,14 +41,15 @@ class Help extends Component{
     return(
       <main role="main" className="container">
         <div className="row">
-          <div className="col-md-9">
-            <p>Exam Scheduler is a tool to create a automated schedule for teacher duties</p>
-            <p>
-              status : {this.state.status} : {this.state.message}
+          <div className="col-md-12">
+            <MarkDown className="srb-markdown" source={helpmd} escapeHtml={false}></MarkDown>
+            <br/>
+            <p style={{paddingLeft:'10px'}}>
+              status : <i className="status-dot fas fa-circle" style={{color:this.state.status}}></i> <br/>
+              {this.state.message}
             </p>
-          </div>
-          <div className="col-md-3">
-            <TemplatePannel/>
+            <br/>
+            <div id="disqus_thread"></div>
           </div>
         </div>
       </main>
