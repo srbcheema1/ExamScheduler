@@ -7,7 +7,7 @@ class ProfilePic extends Component {
     console.log(this.props);
     return (
       <div className="profile">
-          <img className="profile-image" src={this.props.src}/>
+          <img className="profile-image" src={this.props.src} alt="dp"/>
           <div className="profile-overlay">
             <div className="profile-details fadeIn-bottom">
               {this.props.children}

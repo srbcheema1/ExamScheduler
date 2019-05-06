@@ -8,6 +8,11 @@ import rakesh_dp from '../extra/images/rakesh.jpg';
 import srb_dp from '../extra/images/srb.jpeg';
 import vinod_dp from '../extra/images/vinod.jpeg';
 
+import email_logo from '../extra/images/email.svg';
+import github_logo from '../extra/images/github.svg';
+import facebook_logo from '../extra/images/facebook.svg';
+import linkedin_logo from '../extra/images/linkedin.svg';
+
 import './styles/About.css'
 
 class About extends Component{
@@ -16,7 +21,6 @@ class About extends Component{
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2></h2>
             <br/>
             <div className="row">
               <div className="col-sm-3 srb-profile-pic">
@@ -26,20 +30,17 @@ class About extends Component{
                     <br/>
                     <div className="srb-profile-links">
                       <a href="http://www.linkedin.com/in/srbcheema1/" target="_blank" rel="noreferrer noopener">
-                        <i class="fa fa-linkedin"></i>
+                        <img src={linkedin_logo} className="srb-logo" alt="linkedin"/>
                       </a>
                       <a href="http://github.com/srbcheema1" target="_blank" rel="noreferrer noopener">
-                        <i className="fa fa-github"></i>
+                        <img src={github_logo} className="srb-logo" alt="github"/>
                       </a>   
                       <a href="http://facebook.com/srbcheema" target="_blank" rel="noreferrer noopener">
-                        <i class="fa fa-facebook-square"></i>
+                        <img src={facebook_logo} className="srb-logo" alt="facebook"/>
                       </a>
                       <a href="mailto:srbcheema2@gmail.com" target="_blank" rel="noreferrer noopener">
-                        <i class="fas fa-envelope-open-text"></i>
+                        <img src={email_logo} className="srb-logo" alt="email"/>
                       </a>
-                      {/* <a href="http://github.com/srbcheema1" target="_blank" rel="noreferrer noopener">
-                        <i className="fa fa-twitter"></i>
-                      </a> */}
                     </div>
                   </div>
                 </ProfilePic>
@@ -71,13 +72,13 @@ class About extends Component{
                 <br/>
                 <div className="srb-profile-links">
                   <a href="mailto:rakekum34@gmail.com" target="_blank" rel="noreferrer noopener">
-                    <i class="fas fa-envelope-open-text"></i>
+                    <img src={email_logo} className="srb-logo" alt="email"/>
                   </a>
                   <a href="https://www.facebook.com/rakesh.choudhary.1710" target="_blank" rel="noreferrer noopener">
-                    <i class="fa fa-facebook-square"></i>
+                    <img src={facebook_logo} className="srb-logo" alt="facebook"/>
                   </a>
                   <a href="http://github.com/spider34" target="_blank" rel="noreferrer noopener">
-                    <i className="fa fa-github"></i>
+                    <img src={github_logo} className="srb-logo" alt="github"/>
                   </a>
                 </div>
               </div>
@@ -90,7 +91,7 @@ class About extends Component{
                 <br/>
                 <div className="srb-profile-links">
                   <a href="http://facebook.com/srbcheema" target="_blank" rel="noreferrer noopener">
-                    <i class="fa fa-facebook-square"></i>
+                    <img src={facebook_logo} className="srb-logo" alt="facebook"/>
                   </a>
                 </div>
               </div>
@@ -103,7 +104,7 @@ class About extends Component{
                 <br/>
                 <div className="srb-profile-links">
                   <a href="https://www.facebook.com/profile.php?id=100009926718610" target="_blank" rel="noreferrer noopener">
-                    <i class="fa fa-facebook-square"></i>
+                    <img src={facebook_logo} className="srb-logo" alt="facebook"/>
                   </a>
                 </div>
               </div>
@@ -116,7 +117,7 @@ class About extends Component{
                 <br/>
                 <div className="srb-profile-links">
                   <a href="https://www.facebook.com/profile.php?id=100010074459602" target="_blank" rel="noreferrer noopener">
-                    <i class="fa fa-facebook-square"></i>
+                    <img src={facebook_logo} className="srb-logo" alt="facebook"/>
                   </a>
                 </div>
               </div>
