@@ -1,0 +1,49 @@
+.profile {
+  position: relative;
+}
+
+.profile-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.profile-image{
+  width: 100%;
+}
+
+.profile-details {
+  position: absolute;
+  left: 45%;
+  
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.fadeIn-bottom{
+  top: 90%;
+}
+
+.fadeIn-top{
+  top: 10%;
+}
+
+.profile:hover .profile-overlay{
+  opacity: 1;
+}
+
+.profile:hover .profile-details{
+  top: 50%;
+}

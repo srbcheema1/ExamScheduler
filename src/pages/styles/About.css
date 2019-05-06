@@ -1,0 +1,23 @@
+.srb-profile-cover{
+    font-family: 'Titillium Web';
+    color:#fff;
+}
+
+.srb-profile-cover a{
+    color:#fff;
+}
+
+.srb-profile-links{
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+
+.srb-desc h3, .srb-desc p{
+    font-family: 'Titillium Web';
+    padding:10px;
+    padding-bottom:0px;
+}
+
+.srb-profile-pic {
+    margin-top: 10px;
+}
