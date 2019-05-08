@@ -71,7 +71,7 @@ class Dropbox extends Component {
           this.props.onFileChanged(false,{});
           this.setState({file:acceptedFiles[0],task:'wrong',message:message});
           message = message.replace(/\n/g, "<br />");
-          message += "<br/><a href='#/Help'>Read the instructions</a><br/>";
+          message += "<br/><a href='#/Help' target='_blank' rel='noreferrer noopener'>Read the instructions</a><br/>";
           document.getElementById(this.props.filename+"_text").innerHTML = message;
         }
       }

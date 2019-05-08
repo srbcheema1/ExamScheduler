@@ -71,14 +71,14 @@ class About extends Component{
                 <h3 className="srb-profile-name">Rakesh Kumar</h3>
                 <br/>
                 <div className="srb-profile-links">
-                  <a href="mailto:rakekum34@gmail.com" target="_blank" rel="noreferrer noopener">
-                    <img src={email_logo} className="srb-logo" alt="email"/>
-                  </a>
-                  <a href="https://www.facebook.com/rakesh.choudhary.1710" target="_blank" rel="noreferrer noopener">
-                    <img src={facebook_logo} className="srb-logo" alt="facebook"/>
+                  <a href="http://www.linkedin.com/in/rakesh-kumar-2b05a4138" target="_blank" rel="noreferrer noopener">
+                   <img src={linkedin_logo} className="srb-logo" alt="linkedin"/>
                   </a>
                   <a href="http://github.com/spider34" target="_blank" rel="noreferrer noopener">
                     <img src={github_logo} className="srb-logo" alt="github"/>
+                  </a>
+                  <a href="mailto:rakekum34@gmail.com" target="_blank" rel="noreferrer noopener">
+                    <img src={email_logo} className="srb-logo" alt="email"/>
                   </a>
                 </div>
               </div>
@@ -90,8 +90,14 @@ class About extends Component{
                 <h3 className="srb-profile-name">Prafull Dhiman</h3>
                 <br/>
                 <div className="srb-profile-links">
-                  <a href="http://facebook.com/srbcheema" target="_blank" rel="noreferrer noopener">
+                  <a href="http://www.linkedin.com/in/picasadhiman" target="_blank" rel="noreferrer noopener">
+                   <img src={linkedin_logo} className="srb-logo" alt="linkedin"/>
+                  </a>
+                  <a href="https://www.facebook.com/prafull.dhiman" target="_blank" rel="noreferrer noopener">
                     <img src={facebook_logo} className="srb-logo" alt="facebook"/>
+                  </a>
+                  <a href="mailto:picasadhiman@gmail.com" target="_blank" rel="noreferrer noopener">
+                    <img src={email_logo} className="srb-logo" alt="email"/>
                   </a>
                 </div>
               </div>
@@ -103,8 +109,14 @@ class About extends Component{
                 <h3 className="srb-profile-name">Anjali Kaushal</h3>
                 <br/>
                 <div className="srb-profile-links">
+                  <a href="https://www.linkedin.com/in/anjali-kaushal-068566162" target="_blank" rel="noreferrer noopener">
+                   <img src={linkedin_logo} className="srb-logo" alt="linkedin"/>
+                  </a>
                   <a href="https://www.facebook.com/profile.php?id=100009926718610" target="_blank" rel="noreferrer noopener">
                     <img src={facebook_logo} className="srb-logo" alt="facebook"/>
+                  </a>
+                  <a href="mailto:njlkaushal@gmail.com" target="_blank" rel="noreferrer noopener">
+                    <img src={email_logo} className="srb-logo" alt="email"/>
                   </a>
                 </div>
               </div>
@@ -118,6 +130,9 @@ class About extends Component{
                 <div className="srb-profile-links">
                   <a href="https://www.facebook.com/profile.php?id=100010074459602" target="_blank" rel="noreferrer noopener">
                     <img src={facebook_logo} className="srb-logo" alt="facebook"/>
+                  </a>
+                  <a href="mailto:Kumarvinod.nith@gmail.com" target="_blank" rel="noreferrer noopener">
+                    <img src={email_logo} className="srb-logo" alt="email"/>
                   </a>
                 </div>
               </div>

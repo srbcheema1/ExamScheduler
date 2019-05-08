@@ -24,7 +24,7 @@ All you need to maintain is 4 input files out of which 3 will remain constant fo
 - Sum of ranks of teachers appointed in a room will be closer to average.
     - Two teachers with 1 and 1 rank will sum to 2.
     - Two teachers with 5 and 5 rank will sum to 10.
-    - Instead of these combinations, we will allot teacher of rank 1 with teacher with of 5.
+    - Instead of these combinations, we will allot teacher of rank 1 with teacher of rank 5.
     - Chances of clubbing lower rank teachers together are less.
 - Keeping check of all these conditions manually will be a long task, we do it in seconds for you.
 - **Don't worry** if you haven't got some terms, please **read full till end** and **read this again**.
@@ -83,11 +83,11 @@ All you need to maintain is 4 input files out of which 3 will remain constant fo
 
 - [Room_list](https://docs.google.com/spreadsheets/d/1caJK62qwDkqrdeZ8rUnaGs5JulMyxCFeaYhk7TrnsYc/edit?usp=sharing) - Includes <code>*room-name*</code> and <code>*teachers*</code> required as compulsory attributes. Other optional attributes may follow.
 
-    | Name  | Teacers | Info         |
-    | ----- | ------- | ------------ |
-    | Room1 | 1       | Ground Floor |
-    | Room2 | 2       | Top Floor    |
-    | Room3 | 1       | Lab          |
+    | Name  | Teachers | Info         |
+    | ----- | -------- | ------------ |
+    | Room1 | 1        | Ground Floor |
+    | Room2 | 2        | Top Floor    |
+    | Room3 | 1        | Lab          |
 
     - **Name** - This column contains name of rooms *(Compulsory, Unique)*
         - All the room names present in *Session list* should be present here once.
@@ -190,6 +190,12 @@ All you need to maintain is 4 input files out of which 3 will remain constant fo
 - Give a star to our tool on [github](https://github.com/srbcheema1) if you liked it.
 - We would be happy if you provide your valuable feedback regarding how we can improve our tool.
 - If you liked the tool, please recommend it to other schools/colleges.
+
+<br/>
+
+#### Special Thanks
+- [Dr. Naveen Chauhan](http://14.139.56.4/portfolios/index.php?/nith/dr-naveen-chauhan-)
+- [Rajeev Kumar](http://14.139.56.4/portfolios/index.php?/nith/rajeev-kumar-)
 
 <br/>
 

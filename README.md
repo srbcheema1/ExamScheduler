@@ -52,3 +52,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Developer / Author: [Srb Cheema](https://github.com/srbcheema1/)
 
 Collaborator : [Rakesh Kumar](https://github.com/spider34/)
+
+Collaborator : [Amit Chambial](https://github.com/devaman/)
