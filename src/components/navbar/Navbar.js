@@ -22,6 +22,11 @@ class Navbar extends Component{
                   <Link className="nav-link" to="/">Home</Link>
                 </li>
                 <li className="nav-item active">
+                  <Link className="nav-link" to="/Pro">Pro
+                  <i className="fas fa-crown" style={{paddingLeft:'5px', color:'gold',fontSize:'18px'}}></i>
+                  </Link>
+                </li>
+                <li className="nav-item active">
                   <Link className="nav-link" to="/About">About</Link>
                 </li>
                 <li className ="nav-item active">

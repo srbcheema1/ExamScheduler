@@ -1,6 +1,6 @@
 {
-  "name": "exam_scheduler_frontend",
-  "version": "0.1.0",
+  "name": "ExamScheduler",
+  "version": "0.0.1",
   "private": true,
   "homepage": "https://srbcheema1.github.io/ExamScheduler",
   "dependencies": {
@@ -17,7 +17,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "HTTPS=false react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
