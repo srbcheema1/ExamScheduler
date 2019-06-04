@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/ExamScheduler/static/media/coin.f4288c58.png"
   },
   {
-    "revision": "e66b25dfe6e13d2f471b",
+    "revision": "91f0531fd00c45c41343",
     "url": "/ExamScheduler/static/css/main.673e135d.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/ExamScheduler/static/media/github.ec5bc1b3.svg"
   },
   {
-    "revision": "e66b25dfe6e13d2f471b",
-    "url": "/ExamScheduler/static/js/main.77007fa1.chunk.js"
+    "revision": "91f0531fd00c45c41343",
+    "url": "/ExamScheduler/static/js/main.1694526f.chunk.js"
   },
   {
     "revision": "fcecaf11e7cdc8f272e3803ef3ed0c93",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/ExamScheduler/static/media/time_table.046c5568.svg"
   },
   {
-    "revision": "15aaf3526bb6ee00547bfd30f6fa7bcc",
+    "revision": "4fb861a1619ce6a9e44a50222e78a6a6",
     "url": "/ExamScheduler/index.html"
   }
 ];
