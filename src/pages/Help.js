@@ -48,8 +48,6 @@ class Help extends Component{
               status : <i className="status-dot fas fa-circle" style={{color:this.state.status}}></i> <br/>
               {this.state.message}
             </p>
-            <br/>
-            <div id="disqus_thread"></div>
           </div>
         </div>
       </main>
