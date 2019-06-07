@@ -1,3 +1,10 @@
-  .srb_pro{
-    background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.5)), url(../../extra/images/time_table.svg);
-  }
+.srb_pro{
+  background: linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.5)), url(../../extra/images/time_table.svg);
+}
+
+.srb-logo {
+  height:14px;
+  width:14px;
+  filter: invert(0.5);
+  margin-right:10px;
+}

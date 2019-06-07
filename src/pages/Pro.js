@@ -8,6 +8,7 @@ import Admin from './Admin.js'
 import {server_url} from '../extra/constants.js'
 import loading_gif from '../components/loader/loading.gif'
 import coin from '../extra/images/coin.png'
+import gpay from '../extra/images/gpay.png'
 import time_pic from '../extra/images/time_pic.svg'
 import helpmd from '../extra/pro_help.js'
 
@@ -24,6 +25,8 @@ class Pro extends Component{
 
       output_file:null,
       showModel:false,
+      showCustomMessage:false,
+      showBuyCoins:false,
     };
     this.state = this.initialstate;
     this.output_ref = createRef();
@@ -68,8 +71,14 @@ class Pro extends Component{
     this.setState({showModel:false});
   }
 
+  handleCloseCustomMessage = () => {
+    let customMessage = document.getElementById("customMessage").value;
+    this.send_mails(customMessage);
+    this.setState({showCustomMessage:false});
+  }
+
   Reset = () => {
-    this.setState({output_file:null,showModel:false,message:null},()=>{
+    this.setState({output_file:null,showModel:false,showCustomMessage:false,message:null},()=>{
     });
     this.output_ref.current.Reset();
   }
@@ -78,8 +87,15 @@ class Pro extends Component{
     this.Reset();
   }
 
+  handleCloseResetCustomMessage = () => {
+    this.Reset();
+  }
+
+  handleCloseBuyCoins = () => {
+    this.setState({showBuyCoins:false});
+  }
+
   signin = (e) => {
-    //window.open('http://192.168.43.27:5000/google_login', 'Login', "height=640,width=960,toolbar=no,menubar=no,scrollbars=no,location=no,status=no");
     window.location.replace(server_url + "/google_login?caller=+" +encodeURIComponent(window.location.href));
   }
 
@@ -106,14 +122,27 @@ class Pro extends Component{
     )
   }
 
+  buy_coins = () => {
+    this.setState({showBuyCoins:true});
+  }
+
   onFileChanged = (file_name,extra) => {
     this.setState({output_file:file_name, ...extra});
   }
 
-  send_mails = () => {
+  send_mails_button = () => {
+    if(this.state.user['coins'] < 5) {
+      this.buy_coins();
+      return;
+    }
+    this.setState({showCustomMessage:true});
+  }
+
+  send_mails = (customMessage) => { 
     var url = `${server_url}/send_mails`
     var data = new FormData();
     data.append('output_file', this.state.output_file);
+    data.append('custom_message', customMessage);
     fetch(url,{
       method:'POST',
       credentials: 'include',
@@ -189,8 +218,12 @@ class Pro extends Component{
               </div>
               <div className="row" style={{marginTop:'10px'}}>
                 <div className="col-md-6">
-                  <button className="btn btn-outline-info" type="button" onClick={this.send_mails} disabled={!this.state.output_file}>
+                  <button className="btn btn-outline-info" type="button" onClick={this.send_mails_button} disabled={!this.state.output_file}>
                     Send Mails : 5 
+                    <img src={coin} alt="coin" style={{height:'14px',marginLeft:'3px',marginBottom:'3px'}} />
+                  </button>
+                  <button className="btn btn-outline-info" type="button" onClick={this.buy_coins} style={{marginLeft:'10px'}}>
+                    Buy Coins
                     <img src={coin} alt="coin" style={{height:'14px',marginLeft:'3px',marginBottom:'3px'}} />
                   </button>
                 </div>
@@ -237,7 +270,6 @@ class Pro extends Component{
           <Modal.Header closeButton>
             <Modal.Title>{this.state.message}</Modal.Title>
           </Modal.Header>
-          <Modal.Body id="modal_desc"></Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleCloseReset}>
               Reset
@@ -246,6 +278,49 @@ class Pro extends Component{
               Continue
             </Button>
           </Modal.Footer>
+        </Modal>
+
+        <Modal show={this.state.showCustomMessage} onHide={this.handleCloseCustomMessage}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Add a Custom Message with mails
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body id="modal_desc">
+              <textarea id="customMessage" rows="4" style={{width:'100%'}} placeholder="add custom text to attach with each mail, you may leave it empty"/>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={this.handleCloseResetCustomMessage}>
+              Reset
+            </Button>
+            <Button variant="primary" onClick={this.handleCloseCustomMessage}>
+              Continue
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        <Modal show={this.state.showBuyCoins} onHide={this.handleCloseBuyCoins}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Buy Coins 
+              <img src={coin} alt="coin" style={{height:'20px',marginLeft:'3px',marginBottom:'3px'}} />
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body id="modal_desc">
+            <h4>1 coin = 1 &#x20B9; </h4>
+            You may pay using <strong>G Pay</strong> at <code>srbcheema1@oksbi</code>
+            <br/>
+            <img src={gpay} alt="srbcheema1@oksbi" style={{width:'100%',marginBottom:'3px'}} />
+            <br/>
+            Scan and Pay, write your username and "examscheduler_coins" in description.
+            <br/>
+            Coins equivalent to your amount will be added to your account within 24 hours.
+            <br/> <br/>
+            <i class="fas fa-lightbulb" style={{color:'yellow',height:'30px', marginRight:'10px'}}></i> 
+            For new users free 20 coins, mail us to avail the offer.
+            <hr/>
+            For more info please mail us at <strong>srbcheema2@gmail.com</strong>
+          </Modal.Body>
         </Modal>
       </div>
     );
