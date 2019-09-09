@@ -95,6 +95,8 @@ All you need to maintain is 4 input files out of which 3 will remain constant fo
         - Instead of deleting a room we can just set Teachers to 0.
     - **Info** - this is optional column just for meta-data.*(Optional)*
         - It is ignored by the algorithm.
+    - <code>Res</code> (Case Senstive) is a special room name for reserved duties.
+        - It is adviced to use this name instead of other dummy rooms.
 
 
 - [Work_ratio](https://docs.google.com/spreadsheets/d/139LZkE2maa5xi97H0Z4hxtvCVocsYLPAPH38n6RblLQ/edit#gid=0) - Includes <code>*rank*</code> and <code>*work_ratio*</code> as compulsory attributes. Other optional attributes may follow.
@@ -159,6 +161,10 @@ All you need to maintain is 4 input files out of which 3 will remain constant fo
 <br/>
 
 #### Important Note
+- <code>Res</code> is a reserved room name, if you name a room as Res, it will be used for reserved purpose.
+    - <var>"Res"</var> name (Case Senstive) is treated specially and teachers are alloted randomly and uniformly.
+    - It can be used for emergency teacher duty, reserved duties can replace others.
+    - It is adviced to create a room named Res instead of making rooms named RES or Res1 or other names for reserved room.
 - The line numbers mentioned in error reports are not strictly the same as in excel sheet provided.
 - Lines in excel sheet with first cell empty will be ignored (will not be counted).
 - This property can be used to make comments in excel sheets you provide. To make comment just leave the first cell empty.
